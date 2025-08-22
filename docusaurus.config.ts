@@ -82,9 +82,9 @@ const config: Config = {
         // Replace with your project's social card
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
-            title: '刘毅的小站',
+            title: '刘毅的个人小站',
             logo: {
-                alt: '刘毅的小站 Logo',
+                alt: '刘毅的个人小站 Logo',
                 src: 'img/logo.svg',
             },
             items: [
