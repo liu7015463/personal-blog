@@ -48,7 +48,7 @@ function Name() {
                     e.currentTarget.style.setProperty('--mouse-y', `${bounding.y}px`);
                 }}
             >
-                愧怍
+                刘毅
             </span>
             <span className="ml-1">👋</span>
         </motion.div>
@@ -68,18 +68,15 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.div
-                    className="mt-4 flex gap-2"
+                    className={styles.buttonContainer}
                     custom={4}
                     initial="hidden"
                     animate="visible"
                     variants={variants}
                 >
-                    <MovingButton
-                        borderRadius="1.25rem"
-                        className="relative z-10 flex items-center rounded-2xl border border-solid border-neutral-200 bg-background px-5 py-3 text-center text-base font-semibold dark:border-neutral-800"
-                    >
-                        <a href="/about" className="font-semibold">
-                            自我介绍
+                    <MovingButton borderRadius="1rem" className={styles.introButton}>
+                        <a href="/blog" className={styles.buttonLink}>
+                            查看博客
                         </a>
                     </MovingButton>
                 </motion.div>

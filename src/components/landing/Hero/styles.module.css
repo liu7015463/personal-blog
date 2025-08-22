@@ -1,16 +1,30 @@
 /* hero */
 .hero {
-  @apply h-[calc(100vh-60px)] w-screen max-w-full m-0 grid grid-cols-[8fr_11fr] items-center relative;
+  height: calc(100vh - 120px);
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 8fr 11fr;
+  align-items: center;
+  position: relative;
   letter-spacing: 0.04em;
   padding: 0;
 }
 
 .intro {
-  @apply p-4 pl-16 relative z-10;
+  padding: 1rem;
+  padding-left: 4rem;
+  position: relative;
+  z-index: 10;
 }
 
 .intro > p {
-  @apply my-6 text-[#6e7b8c] text-justify text-base leading-8;
+  margin: 1.5rem 0;
+  color: #6e7b8c;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 2rem;
   letter-spacing: -0.04em;
   text-shadow: 0 0 #8c99ab;
 }
@@ -21,8 +35,8 @@
 
 .name {
   --lighting-size: 300px;
-  --lighting-color: var(--ifm-color-primary);
-  --lighting-highlight-color: var(--ifm-color-primary-lightest);
+  --lighting-color: #007acc;
+  --lighting-highlight-color: #4da6ff;
 
   background-image: radial-gradient(
     var(--lighting-highlight-color),
@@ -40,67 +54,172 @@
   background-color: var(--lighting-color);
   color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .background {
-  @apply relative w-full h-[90%] grid place-items-center items-start;
+  position: relative;
+  width: 100%;
+  height: 80%;
+  display: grid;
+  place-items: center;
+  align-items: start;
   z-index: 5;
+  overflow: hidden;
 }
 
 .background svg {
-  @apply w-full h-auto;
+  width: 90%;
+  height: 90%;
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: contain;
 }
 
 .circle {
-  @apply absolute top-0 w-full h-full bg-gradient-to-r from-[rgb(150,255,244,0.81)] to-[rgb(0,71,252,0.81)] rounded-full opacity-30;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(150, 255, 244, 0.81), rgba(0, 71, 252, 0.81));
+  border-radius: 50%;
+  opacity: 0.3;
   filter: blur(80px);
   z-index: -1;
 }
 
 .box {
-  @apply absolute inline-flex justify-center items-center bg-transparent text-transparent backdrop-blur-[2px] shadow-[inset_1px_1px_5px_rgb(255,255,255,0.3),0_0_5px_rgb(0,0,0,0.2)] rounded-lg p-2 w-14 h-14;
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  color: transparent;
+  backdrop-filter: blur(2px);
+  box-shadow: inset 1px 1px 5px rgba(255, 255, 255, 0.3), 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.introButton {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  border: 1px solid #e5e5e5;
+  background: #ffffff;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.introButton:hover {
+  background: #f8f9fa;
+  border-color: #007acc;
+}
+
+.buttonLink {
+  font-weight: 600;
+  text-decoration: none;
+  color: #333333;
+}
+
+.buttonLink:hover {
+  color: #007acc;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .introButton {
+    background: #1a1a1a;
+    border-color: #404040;
+  }
+
+  .introButton:hover {
+    background: #2a2a2a;
+    border-color: #4da6ff;
+  }
+
+  .buttonLink {
+    color: #ffffff;
+  }
+
+  .buttonLink:hover {
+    color: #4da6ff;
+  }
 }
 
 @media (max-width: 1000px) {
   .hero {
-    @apply grid-cols-1 grid-rows-[max-content_minmax(0,max-content)] items-start h-auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content minmax(0, max-content);
+    align-items: start;
+    height: auto;
   }
 
   .intro {
-    @apply p-0 pt-16 flex flex-col items-center;
+    padding: 0;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro > p {
+    padding: 0 1rem;
   }
 
   .background {
-    @apply w-full justify-self-center pt-16 h-full grid place-items-center;
+    width: 100%;
+    justify-self: center;
+    padding-top: 4rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
   }
 
   .background svg {
-    @apply w-[90%] h-auto;
+    width: 90%;
+    height: auto;
   }
 
   .box {
-    @apply w-12 h-12;
+    width: 3rem;
+    height: 3rem;
   }
 }
 
 @media (max-width: 570px) {
   .hero {
-    @apply h-auto;
+    height: auto;
   }
 
   .background {
-    @apply pt-8;
+    padding-top: 2rem;
   }
 
   .background svg {
-    @apply w-full h-auto;
+    width: 100%;
+    height: auto;
   }
 
   .box {
-    @apply w-8 h-8;
+    width: 2rem;
+    height: 2rem;
   }
 
   .intro {
-    @apply pt-8;
+    padding-top: 2rem;
   }
 }
