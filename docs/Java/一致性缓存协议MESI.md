@@ -8,7 +8,7 @@
 
 **缓存一致性协议（如 MESI）是 CPU 硬件的核心功能**，完全由硬件自动实现。
 
-```mermaid
+```mermaid showLineNumbers
 graph LR
     A[CPU Core 1] -->|私有缓存| B[L1/L2 Cache]
     C[CPU Core 2] -->|私有缓存| D[L1/L2 Cache]
@@ -93,7 +93,7 @@ core2核心状态为I，当发出BusRd请求读取数据时，core1会将缓存�
 4. **Core 2** 直接接收数据 V1，状态设为 `S`
 5. **内存控制器**：仅备份数据（不参与传输）
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant Core2 as 请求者 Core2 (状态 I)
     participant Bus as 总线
@@ -114,7 +114,7 @@ sequenceDiagram
 
 core2核心状态为I，当发出BusRd请求读取数据时，core1会将缓存写入主存，状态转换为I，core2也会转换为M
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant Core2 as Core 2 (请求者)
     participant Bus as 总线
@@ -162,7 +162,7 @@ sequenceDiagram
 
 ### 场景一：E 核心发出 BusRdX
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant E_Core as E状态核心
     participant Bus as 总线
@@ -189,7 +189,7 @@ sequenceDiagram
 
 ### 场景二：I 核心发出 BusRdX
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant I_Core as I状态核心 (请求者)
     participant Bus as 总线
@@ -219,7 +219,7 @@ sequenceDiagram
 
 ### 场景三：I 核心发出 BusRd（读请求）
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant I_Core as I状态核心 (请求者)
     participant Bus as 总线
@@ -250,7 +250,7 @@ sequenceDiagram
 
 ### 场景一：S 状态核心发出 BusRd 请求
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant core1 as core1(S)
     participant core2 as core2(S)
@@ -268,7 +268,7 @@ sequenceDiagram
 
 ### 场景二：S 状态核心发出 BusRdX 请求
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant core1 as core1(S)
     participant core2 as core2(S)
@@ -286,7 +286,7 @@ sequenceDiagram
 
 ### 场景三：I 状态核心发出 BusRd 请求
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant core1 as core1(S)
     participant core2 as core2(S)
@@ -304,7 +304,7 @@ sequenceDiagram
 
 ### 场景四：I 状态核心发出 BusRdX 请求
 
-```mermaid
+```mermaid showLineNumbers
 sequenceDiagram
     participant core1 as core1(S)
     participant core2 as core2(S)

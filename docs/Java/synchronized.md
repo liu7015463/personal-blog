@@ -27,7 +27,7 @@ stateDiagram-v2
 
 重量级锁的核心是ObjectMonitor对象，其主要字段包括：
 
-```java
+```java showLineNumbers
 // ObjectMonitor的关键字段（C++实现）
 class ObjectMonitor {
     volatile markOop _header;     // 对象头备份
@@ -117,7 +117,7 @@ flowchart TD
 
 ### 1. 阻塞机制
 
-```java
+```java showLineNumbers
 // 重量级锁的阻塞示例
 public class HeavyweightLockExample {
     private final Object lock = new Object();
@@ -175,7 +175,7 @@ flowchart LR
 
 ### 3. wait/notify机制
 
-```java
+```java showLineNumbers
 public class WaitNotifyExample {
     private final Object lock = new Object();
     private boolean condition = false;
@@ -242,7 +242,7 @@ flowchart TD
 
 ### 1. 自适应自旋
 
-```java
+```java showLineNumbers
 // JVM内部的自适应自旋逻辑（伪代码）
 class AdaptiveSpinning {
     private static int getSpinCount(Thread thread, Object lock) {
@@ -274,7 +274,7 @@ class AdaptiveSpinning {
 
 ### 2. 锁消除和锁粗化
 
-```java
+```java showLineNumbers
 public class LockOptimization {
     
     // 锁消除示例：JIT编译器会消除不必要的锁
@@ -347,7 +347,7 @@ stateDiagram-v2
 
 ### 2. 性能优化建议
 
-```java
+```java showLineNumbers
 public class PerformanceOptimization {
     
     // 1. 减少锁的持有时间
