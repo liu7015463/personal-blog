@@ -57,4 +57,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget --no-verbose --tries=1 --spider http://localhost:3100 || exit 1
 
 # 启动命令
-CMD ["pnpm", "run", "server", "--", "--port", "3100", "--host", "0.0.0.0"]
+CMD ["pnpm", "run", "server", "--port", "3100", "--host", "0.0.0.0"]
