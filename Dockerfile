@@ -20,7 +20,7 @@ COPY . .
 RUN pnpm build
 
 # 生产阶段
-FROM node:18-alpine AS production
+FROM node:22.17-alpine AS production
 
 # 安装 pnpm
 RUN npm install -g pnpm
