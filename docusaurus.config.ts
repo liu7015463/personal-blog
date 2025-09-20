@@ -94,7 +94,6 @@ const config: Config = {
                     position: 'left',
                     label: '文档',
                 },
-                { to: '/blog', label: '博客', position: 'left' },
                 {
                     href: 'https://github.com/liu7015463/personal-blog',
                     label: 'GitHub',

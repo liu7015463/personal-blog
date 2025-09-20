@@ -75,8 +75,8 @@ export default function Hero() {
                     variants={variants}
                 >
                     <MovingButton borderRadius="1rem" className={styles.introButton}>
-                        <a href="/blog" className={styles.buttonLink}>
-                            查看博客
+                        <a href="/docs/intro" className={styles.buttonLink}>
+                            查看文档
                         </a>
                     </MovingButton>
                 </motion.div>
