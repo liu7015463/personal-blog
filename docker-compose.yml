@@ -23,15 +23,6 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-    # 资源限制
-    deploy:
-      resources:
-        limits:
-          cpus: '1.0'
-          memory: 512M
-        reservations:
-          cpus: '0.5'
-          memory: 256M
 
 networks:
   website-network:
